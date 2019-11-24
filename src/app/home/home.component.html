@@ -1,0 +1,52 @@
+<div >
+    <input
+    type="text"
+    style="padding:8px;margin:15px auto;width:30%;"
+    placeholder="Type to filter the name column..."
+    (keyup)="updateFilter($event)"
+  />
+  <ngx-datatable
+        #table
+        class="bootstrap"
+        [columns]="columns"
+        [columnMode]="ColumnMode.force"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        rowHeight="auto"
+        [limit]="10"
+        [rows]="rows"
+      >
+      <ngx-datatable-column name="Store">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Category">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Item">
+              <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value}}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Sale Price">
+                <ng-template let-value="value" ngx-datatable-cell-template>
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+          <ngx-datatable-column name="Reg Price">
+              <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value}}
+              </ng-template>
+            </ngx-datatable-column>
+      <ngx-datatable-column name="Url">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <div style="margin:5px;padding:3px">
+              <a target="_blank" [href]="value">Details</a>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+</div>
